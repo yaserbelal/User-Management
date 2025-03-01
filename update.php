@@ -29,30 +29,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Update User</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Orbitron', Arial, sans-serif;
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #0a0a23 0%, #1a1a4d 100%);
+            color: #ffffff;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="1" fill="white" opacity="0.3"/><circle cx="50" cy="50" r="2" fill="white" opacity="0.4"/><circle cx="80" cy="20" r="1" fill="white" opacity="0.3"/></svg>');
+            background-repeat: repeat;
+            opacity: 0.2;
+            z-index: -1;
         }
 
         h1 {
-            color: #333;
+            color: #00ffff;
             text-align: center;
             margin-bottom: 30px;
+            text-shadow: 0 0 10px #00ffff;
         }
 
         form {
-            background: white;
+            background: rgba(20, 20, 60, 0.8);
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            border: 1px solid #00ffff;
         }
 
         label {
             display: block;
             margin: 10px 0 5px;
-            color: #555;
+            color: #ccffff;
+            text-shadow: 0 0 5px #00cccc;
         }
 
         input[type="text"],
@@ -61,27 +80,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             width: 100%;
             padding: 8px;
             margin-bottom: 15px;
-            border: 1px solid #ddd;
+            border: 1px solid #00cccc;
             border-radius: 4px;
+            background: rgba(0, 0, 50, 0.7);
+            color: #ffffff;
             box-sizing: border-box;
+            transition: box-shadow 0.3s;
+        }
+
+        input:focus {
+            box-shadow: 0 0 10px #00ffff;
+            outline: none;
         }
 
         button {
-            background-color: #2196F3;
-            color: white;
+            background: linear-gradient(45deg, #00ffff, #00cccc);
+            color: #000033;
             padding: 10px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 25px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             display: block;
             margin: 20px auto 0;
+            text-shadow: 0 0 5px #ffffff;
         }
 
         button:hover {
-            background-color: #1976D2;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #00ffff;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Update User</h1>
